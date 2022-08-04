@@ -1,9 +1,9 @@
 import { query } from "../db/connection.js";
 
-
-export async function getStartTable() {
+//Function to GET entire start a clean table
+export async function getStartClean() {
   const data = await query(`SELECT * FROM start;`);
-  console.log("This is the start table", data);
+  console.log("This is the start table", data.rows);
   return data
 }
 
