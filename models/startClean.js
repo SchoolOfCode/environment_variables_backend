@@ -7,3 +7,23 @@ export async function getStartClean() {
   return data
 }
 
+//post 
+export async function postCleanup(body) {
+  const {cleanName, location, date, startTime, endTime, host, notes, latitude, longitude } = body;
+  const data = await query(
+    `INSERT INTO start (
+      cleanName,
+      location,
+      date,
+      startTime,
+      endTime,
+      host,
+      notes,
+      latitude,
+      longitude
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;`,
+    [cleanName, location, date, startTime, endTime, host, notes, latitude, longitude]
+  );
+  return (data)
+}
+
