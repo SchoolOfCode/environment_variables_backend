@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "db:createusers": "node -r dotenv/config ./db/scripts/users/createTable.js",
+    "db:createStartTable": "node -r dotenv/config ./db/scripts/startClean/createStartTable.js",
+    "db:populateStartTable": "node -r dotenv/config ./db/scripts/startClean/populateStartTable.js",
+    "db:dropStartTable": "node -r dotenv/config ./db/scripts/startClean/dropStartTable.js",
+    "db:resetStartTable": "npm run db:dropStartTable && npm run db:createStartTable && npm run db:populateStartTable",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
