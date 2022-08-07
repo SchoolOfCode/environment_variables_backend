@@ -6,9 +6,17 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "db:createStartTable": "node -r dotenv/config ./db/scripts/startClean/createStartTable.js",
+    "db:createLogTable": "node -r dotenv/config ./db/scripts/logClean/createLogTable.js",
+    "db:createJoinTable": "node -r dotenv/config ./db/scripts/joinClean/createJoinTable.js",
     "db:populateStartTable": "node -r dotenv/config ./db/scripts/startClean/populateStartTable.js",
+    "db:populateLogTable": "node -r dotenv/config ./db/scripts/logClean/populateLogTable.js",
+    "db:populateJoinTable": "node -r dotenv/config ./db/scripts/joinClean/populateJoinTable.js",
     "db:dropStartTable": "node -r dotenv/config ./db/scripts/startClean/dropStartTable.js",
+    "db:dropLogTable": "node -r dotenv/config ./db/scripts/logClean/dropLogTable.js",
+    "db:dropJoinTable": "node -r dotenv/config ./db/scripts/joinClean/dropJoinTable.js",
     "db:resetStartTable": "npm run db:dropStartTable && npm run db:createStartTable && npm run db:populateStartTable",
+    "db:resetLogTable": "npm run db:dropLogTable && npm run db:createLogTable && npm run db:populateLogTable",
+    "db:resetJoinTable": "npm run db:dropJoinTable && npm run db:createJoinTable && npm run db:populateJoinTable",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
