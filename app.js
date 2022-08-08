@@ -8,6 +8,7 @@ import logger  from 'morgan';
 
 import startCleanRouter from './routes/startClean.js';
 import logCleanRouter from './routes/logClean.js'
+import joinCleanRouter from './routes/joinClean.js'
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/startclean', startCleanRouter);
 app.use('/logclean', logCleanRouter);
+app.use('/joinclean', joinCleanRouter);
 
 app.use(function (req, res, next) {
   res.status(404).json({message: "We couldn't find what you were looking for 😞"})
