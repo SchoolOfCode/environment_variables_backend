@@ -18,7 +18,7 @@
     "db:resetLogTable": "npm run db:dropLogTable && npm run db:createLogTable && npm run db:populateLogTable",
     "db:resetJoinTable": "npm run db:dropJoinTable && npm run db:createJoinTable && npm run db:populateJoinTable",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules -r dotenv/config node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
