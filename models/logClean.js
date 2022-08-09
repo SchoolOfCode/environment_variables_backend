@@ -7,6 +7,19 @@ export async function getLogClean() {
   return data
 }
 
+//Get sum of a column (volunteers) from log clean table
+export async function getAllVolunteers() {
+  const data = await query(`SELECT SUM(volunteers) FROM log;`);
+  console.log("This is the sum of volunteers in log table", data.rows);
+  return data
+}
+
+//get sum of column (bags) from log clean table
+export async function getAllBags() {
+  const data = await query(`SELECT SUM(bags) FROM log;`);
+  console.log("This is the sum of bags collected in log table", data.rows);
+  return data
+}
 
 //Post
 export async function postLogCleanup(body) {
