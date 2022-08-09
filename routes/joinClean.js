@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import {getJoinClean, postJoinCleanup} from "../models/joinClean.js"
+import {getJoinClean, postJoinCleanup,updEvent} from "../models/joinClean.js"
 
 
 //Route to GET all entries in Log a clean table
@@ -16,5 +16,18 @@ router.post("/", async function (req, res) {
   console.log(`new joiner posted: ${result}`)
   res.status(200).json({success:true, payload: result.rows});
 });
+
+
+//PUT
+router.put('/id',async(req,res)=>{
+  const id = Number(req.params.id);
+  const data = req.body;
+  const result = await updEvent(id, data)
+  res.json({success: true, payload: result.rows });
+});
+
+
+
+
 
 export default router;

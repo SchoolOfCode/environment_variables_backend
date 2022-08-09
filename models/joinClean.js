@@ -20,3 +20,13 @@ export async function postJoinCleanup(body) {
   );
   return (data)
 }
+
+//PUT
+export async function updEvent(id, data){
+  const sqlString = `UPDATE joinClean SET name = $1 , comments = $2 WHERE id = $3 RETURNING *;`
+  const result = await query(sqlString,[data.name, data.comments, id]); 
+  return result
+}
+
+
+      
