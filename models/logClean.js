@@ -37,7 +37,7 @@ export async function postLogCleanup(body) {
 
 //Update
 export async function updateLogCleanup(id , date){
-  const sqlString = `UPDATE logClean SET cleanname = $1 , bags = $2 ,volunteers =$3 WHERE id = $4 RETURNING *;`
+  const sqlString = `UPDATE log SET cleanname = $1 , bags = $2 ,volunteers =$3 WHERE id = $4 RETURNING *;`
   const result = await query(sqlString,[data.cleanname, data.bags, data.volunteers, id]); 
   return result
 }
