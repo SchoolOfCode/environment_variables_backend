@@ -19,6 +19,20 @@ go to [https://github.com/SchoolOfCode/environment_variables_frontend]**
 
 <br />
 
+## ***Authors (aka, Team Environment Variables)***
+- [Emma Gill](https://github.com/SurfingElectron)
+- [Amira Gucher-Blackman](https://github.com/amiragucher)
+- [Blake Lawrence](https://github.com/BlakeLawrence)
+- [Edgaras Markunas](https://github.com/EdMark11)
+- [Simran Rai](https://github.com/srai98i)
+- [Jena Zubaydi](https://github.com/jena-84)
+
+<br/>
+
+---
+
+<br />
+
 ## ***Environment Variables***
 
 To run this backend repository, please create a .env file in the root of the folder and inside there add your credentials in the following format; (these credentials can be found in your Heroku credential settings)
