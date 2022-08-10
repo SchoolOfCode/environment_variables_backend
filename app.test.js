@@ -4,10 +4,10 @@ import supertest from "supertest";
 
 import app from "./app.js";
 
-jest.setTimeout(7000);
+jest.setTimeout(10000);
 
 describe("GET /joinclean", () => {
-  test("gives us back 200", async () => {
+  it("gives us back 200", async () => {
     await request(app).get("/joinclean");
   });
 });
