@@ -19,7 +19,7 @@ router.post("/", async function (req, res) {
 
 
 //Put
-router.put('/id',async(req,res)=>{
+router.put('/:id',async(req,res)=>{
   const id = Number(req.params.id);
   const data = req.body;
   const result = await updEvent(id, data)
