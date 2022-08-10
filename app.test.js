@@ -5,7 +5,7 @@ import { jest } from "@jest/globals";
 import app from "./app.js";
 
 jest.setTimeout(10000);
-
+//JOINCLEAN ROUTES
 //Test joinclean routes GET, POST, PUT, DELETE
 describe("Tests for /joinclean route", () => {
   describe("Tests for GET /joinclean", () => {
@@ -46,7 +46,7 @@ describe("Tests for /joinclean route", () => {
       });
       expect(res.req.method).toEqual("POST");
     });
-    test("POST /joinclean method is to /joinclean", async () => {
+    test("POST /joinclean object is to /joinclean", async () => {
       const res = await request(app).post("/joinclean").send({
         name: "Any name",
         comments: "A comment",
@@ -82,6 +82,8 @@ describe("Tests for /joinclean route", () => {
   });
 });
 
+
+//LOGCLEAN ROUTES
 // can write tests for GET, POST, PUT
 describe("Tests for /logclean route", () => {
   describe("Tests for GET /logclean ", () => {
@@ -114,6 +116,22 @@ describe("Tests for /logclean route", () => {
       });
       expect(res.statusCode).toEqual(200);
     });
+    test("POST /logclean method is POST", async () => {
+      const res = await request(app).post("/logclean").send({
+        cleanname: "Test Clean",
+        bags: 1,
+        volunteers: 1,
+      });
+      expect(res.req.method).toEqual("POST");
+    });
+    test("POST /logclean object is to /logclean", async () => {
+      const res = await request(app).post("/logclean").send({
+        cleanname: "Test Clean",
+        bags: 1,
+        volunteers: 1,
+      });
+      expect(res.req.path).toEqual("/logclean");
+    });
   });
   describe("Tests for PUT /logclean ", () => {
     test("PUT /logclean returns a 200 status code", async () => {
@@ -127,6 +145,8 @@ describe("Tests for /logclean route", () => {
   });
 });
 
+
+// STARTCLEAN ROUTES
 //can write tests for GET, POST
 describe("Tests for /startclean route", () => {
   describe("Tests for GET /logclean ", () => {
@@ -151,6 +171,7 @@ describe("Tests for /startclean route", () => {
       );
     });
   });
+
   describe("Tests for POST /logclean ", () => {
     test("POST /startclean returns a 200 status code and confirmation of an object being posted", async () => {
       const res = await request(app).post("/startclean").send({
@@ -159,12 +180,40 @@ describe("Tests for /startclean route", () => {
         date: "22.09.22",
         startTime: "12:00",
         endTime: "13:00",
-        host: "Some Hose",
+        host: "Some Host",
         notes: "A Note",
-        latitude: 50.821781,
-        longitude: -0.143573,
+        latitude: 74.87603594928817,
+        longitude: -40.301351746354406,
       });
       expect(res.statusCode).toEqual(200);
+    });
+    test("POST /startclean method is POST", async () => {
+      const res = await request(app).post("/startclean").send({
+        cleanName: "New Clean Name",
+        location: "Some Location",
+        date: "22.09.22",
+        startTime: "12:00",
+        endTime: "13:00",
+        host: "Some Host",
+        notes: "A Note",
+        latitude: 74.87603594928817,
+        longitude: -40.301351746354406,
+      });
+      expect(res.req.method).toEqual("POST");
+    });
+    test("POST /startclean object is to /startclean", async () => {
+      const res = await request(app).post("/startclean").send({
+        cleanName: "New Clean Name",
+        location: "Some Location",
+        date: "22.09.22",
+        startTime: "12:00",
+        endTime: "13:00",
+        host: "Some Host",
+        notes: "A Note",
+        latitude: 74.87603594928817,
+        longitude: -40.301351746354406,
+      });
+      expect(res.req.path).toEqual("/startclean");
     });
   });
 });
