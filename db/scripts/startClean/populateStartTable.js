@@ -35,6 +35,17 @@ let initialStartTable = [
     latitude: 50.830597805865416,
     longitude: -0.26970090532648877,
   },
+  {
+    cleanName: "O2 Thames Cleanup",
+    location: "Greenwich",
+    date: "29.09.22",
+    startTime: "12:00",
+    endTime: "13:00",
+    host: "Emma Gill",
+    notes: "Bring Wellies",
+    latitude: 51.50147618892564,
+    longitude: 0.00901512085762601,
+  },
 ];
 
 async function populateStartTable() {

@@ -6,6 +6,21 @@ let initialLogTable = [
     bags: 40,
     volunteers: 15,
   },
+  {
+    cleanname: "Brighton Cleanup",
+    bags: 36,
+    volunteers: 12,
+  },
+  {
+    cleanname: "River Adur Cleanup",
+    bags: 16,
+    volunteers: 8,
+  },
+  {
+    cleanname: "O2 Cleanup",
+    bags: 100,
+    volunteers: 25,
+  },
 ];
 
 async function populateLogTable() {
