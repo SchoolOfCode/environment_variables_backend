@@ -35,3 +35,10 @@ export async function postLogCleanup(body) {
   return (data)
 }
 
+//Update
+export async function updateLogCleanup(id , data){
+  const sqlString = `UPDATE log SET cleanname = $1 , bags = $2 ,volunteers =$3 WHERE id = $4 RETURNING *;`
+  const result = await query(sqlString,[data.cleanname, data.bags, data.volunteers, id]); 
+  return result
+}
+
