@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import {getLogClean, postLogCleanup, getAllVolunteers, getAllBags} from "../models/logClean.js"
+import {getLogClean, postLogCleanup, getAllVolunteers, getAllBags,updateLogCleanup} from "../models/logClean.js"
 
 
 //Route to GET all entries in Log a clean table
@@ -28,5 +28,13 @@ router.post("/", async function (req, res) {
   console.log(`new log created: ${result}`)
   res.status(200).json({success:true, payload: result.rows});
 });
+
+//Update
+router.put('/:id', async function(req,res){
+  const id= Number(req.params.id);
+  const data = req.body;
+  const result = await updateLogCleanup(id, data)
+  res.json({success: true, payload: result.rows });
+})
 
 export default router;
