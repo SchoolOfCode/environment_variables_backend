@@ -59,116 +59,82 @@ npm install
 
 To run this project, you will need to add the following environment variables to your back-end .env file:
 
-`DATABASE_URL = <*Replace this text with URI*>`
+`DATABASE_URL = <place your database URL here>`
 
 
 ## Tech Stack
+### Back-end & database
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Nodemon](https://img.shields.io/badge/-nodemon-blue?style=for-the-badge&logo=nodemon)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
-Node.js
 
- Nodemon, Babel, Jest, Supertest, Dotenv, 
- 
- Express, PostgreSQL, Cors, Morgan
+### Testing
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Jest mini-banner](https://camo.githubusercontent.com/5ec7b7ed343219da6b2213349bacdc389803950b5298464b35e76f7ab6ccf27d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6573742d4332313332353f7374796c653d666f722d7468652d6261646765266c6f676f3d6a657374266c6f676f436f6c6f723d7768697465)
+![Supertest mini-banner](https://img.shields.io/badge/-supertest-blue?style=for-the-badge&logo=jest)
 
- Heroku
 
-<br/>
+## Usage/Examples
+Scripts to create, populate and drop tables in the database are inside the package.json file.
 
----
+### Script Examples
+Create a table to log new cleans:
+```javascript
+"db:createStartTable": "node -r dotenv/config ./db/scripts/startClean/createStartTable.js"
+```
 
-<br />
+Populate the above table with seed data:
+```javascript
+"db:populateStartTable": "node -r dotenv/config ./db/scripts/startClean/populateStartTable.js"
+```
 
-## ***Running Tests***
+### Executing Script Examples
+Create a table to log new cleans:
+```bash
+npm run db:createStartTable
+```
 
-To run tests, run the following command
+Populate the above table with seed data:
+```bash
+npm run db:populateStartTable
+```
+
+### Testing
+To run the existing Jest tests, execute the following command:
 
 ```bash
   npm run test (or npm t)
 ```
 
-<br/>
+## Challenges and how we overcame them
+There were numerous challenges on this project, often rooted in the circumstance of a team of junior developers grappling with new technologies. In general, we used our skills at working together, navigating documentation, parsing error messages, and researching solutions to find the solutions we needed.
 
----
+**Testing with Jest & Supertest**: We encountered some initial teething difficulties with implementing unit tests on the back-end. After some research and discussion with a School of Code coach, we were able to resolve those problems to write effective tests to ensure our API and database responded in the way we expected.
 
-<br />
 
-## ***Usage/Examples***
+## What we took from this experience
+Our goal for this project was to work together well as a team, learn as much as we could, and at the end of it, present a functional and attractive app. We facilitated this by deciding on a team manifesto at the very start, which included important topics like how we wanted to approach discussions, make decisions, and resolve conflicts. We held true to our manifesto throughout the process, and as a result, any differences of opinion were smoothly resolved and the final decision embraced by all.
 
-Here are some basic examples of how to use this API:
+Working in an Agile way was an invaluable experience. We approached the project in an iterative way, and with each sprint updated or added features so we always had a functioning app. The ability to quickly pivot also helped us when we had to make changes due to our user’s feedback, adding clarity and functionality to our app to make it more usable. 
 
-You can set up some custom scripts to run specific files inside this project;
+We had a number of stretch goals, and with more time we would have added user profiles, notifications of upcoming and new events, and would have liked to spend some time refactoring duplicate code. 
 
-Scripts can be found inside of the package.json file
+All in all, we had a fun and fantastic time together, worked hard, and are all very proud of our final product! 
 
-**Examples of scripts:**
 
-Create a table:
-```javascript
-"db:createStartTable": "node -r dotenv/config ./db/scripts/startClean/createStartTable.js"
-```
-
-Populate the table:
-```javascript
-"db:populateStartTable": "node -r dotenv/config ./db/scripts/startClean/populateStartTable.js"
-```
-
-**Example of how to run these scripts:**
-Creates a table in Heroku
-```bash
-npm run db:createStartTable
-```
-
-Populates a table in Heroku
-```bash
-npm run db:populateStartTable
-```
-
-**You can also populate tables remotely on your front end through post requests:**
-
-Example of using a post request:
-
-```javascript
-const handleSubmit = async function (values) {
-    const response = await fetch(`${url}/logclean`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        cleanname: values.cleanname,
-        bags: values.bags,
-        volunteers: values.volunteers,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-  };
-```
-
-<br/>
-
----
-
-<br />
-
-## ***API reference list***
-
-**For GET requests:**
-
-Get all start clean data:
+## Appendix I: API Reference
+Get all existing cleans:
 ```
 http://localhost:5000/startclean
 ```
 
-Get all log clean data:
+Get all the data from logged cleans:
 ```
 http://localhost:5000/logclean
 ```
-
-Get all join clean data:
-```
-http://localhost:5000/joinclean
-```
-
-**Using different routes:**
 
 Sum of volunteers:
 ```
@@ -180,31 +146,23 @@ Sum of bags collected:
 http://localhost:5000/logclean/bagscollected
 ```
 
-**And the same is available for start clean data:**
-
 Total cleans:
 ```
 http://localhost:5000/startclean/totalcleans
 ```
 
-<br/>
 
----
+## Appendix II: Third Party Documentation
+The following is a list of documentation which may be useful:
 
-<br />
+- Node.js: https://nodejs.org/en/docs/
 
-## ***Appendix***
+- Express: https://expressjs.com/en/starter/installing.html
 
-**Here are some links to documentation that could be helpful with using this server:**
+- PostgreSQL: https://www.postgresql.org/docs/
 
-- Node.js - https://nodejs.org/en/docs/
+- Heroku: https://devcenter.heroku.com/categories/nodejs-support
 
-- PostgreSQL - https://www.postgresql.org/docs/
+- Jest: https://jestjs.io/docs/getting-started
 
-- Heroku - https://devcenter.heroku.com/categories/nodejs-support
-
-- Jest - https://jestjs.io/docs/getting-started
-
-- Express - https://expressjs.com/en/starter/installing.html
-
-
+- Supertest: https://www.jsdocs.io/package/supertest
