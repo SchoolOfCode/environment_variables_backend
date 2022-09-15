@@ -3,8 +3,11 @@
 ![Project Clean-Up](https://user-images.githubusercontent.com/98705391/184406989-52b4b173-8768-439e-80e5-5462137c7c38.gif)
 
 
+
 # Project Clean-up Backend
 ![Group 23](https://user-images.githubusercontent.com/98705391/184406940-11ec88a4-3ffa-4adf-ab2e-f983dbde7a2d.png)
+
+
 
 
 This is the final project app we created while attending the School Of Code
@@ -30,6 +33,8 @@ world is facing and we wanted to be pro-active about addressing this.
 If you're interested in the frontend specifically,
 
 go to [https://github.com/SchoolOfCode/environment_variables_frontend]**
+
+Deployed on vercel: https://projectcleanup.netlify.app/
 
   
 
