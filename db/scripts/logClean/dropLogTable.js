@@ -7,3 +7,5 @@ async function dropLogTable() {
 }
 
 dropLogTable();
+
+//adding comment to focrce push
