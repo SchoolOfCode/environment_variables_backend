@@ -11,4 +11,3 @@ async function logClean() {
 
 logClean();
 
-//comment
