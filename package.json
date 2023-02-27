@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js",
+    "start": "nodemon ./bin/www.js",
     "db:createStartTable": "node -r dotenv/config ./db/scripts/startClean/createStartTable.js",
     "db:createLogTable": "node -r dotenv/config ./db/scripts/logClean/createLogTable.js",
     "db:createJoinTable": "node -r dotenv/config ./db/scripts/joinClean/createJoinTable.js",
