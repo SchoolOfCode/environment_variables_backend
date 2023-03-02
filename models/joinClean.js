@@ -33,5 +33,3 @@ export async function deleteById(id) {
   const result = await query(sqlString, [id]);
   return result;
 }
-
-//adding a random comment

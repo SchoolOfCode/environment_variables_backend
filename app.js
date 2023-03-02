@@ -13,12 +13,11 @@ import joinCleanRouter from "./routes/joinClean.js";
 const app = express();
 
 app.use(logger("dev"));
-app.use(cors({ origin: "https://project-cleanup.netlify.app" }));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use("/startclean", startCleanRouter);
 app.use("/logclean", logCleanRouter);
 app.use("/joinclean", joinCleanRouter);
